@@ -20,7 +20,6 @@ public class SwitchToAndFromPersonalAccountTests extends BeforeAfter {
     @Rule
     public DriverRule driver = new DriverRule();
 
-
     @Test
     @DisplayName("Переход в личный кабинет авторизованного пользователяпо клику на «Личный кабинет»")
     public void SwitchToPersonalAccountAuthUserTests() {
@@ -51,7 +50,6 @@ public class SwitchToAndFromPersonalAccountTests extends BeforeAfter {
         Boolean actual = new LoginPage(driver)
                 .isSignInButtonDisplayed();
         assertTrue("Не авторизированный пользователь не может зайти в кабинет", actual);
-
     }
 
     @Test
@@ -70,7 +68,6 @@ public class SwitchToAndFromPersonalAccountTests extends BeforeAfter {
                 .clickConstructorButton()
                 .isBunsIsDisplayed();
         assertTrue("Ошибка открытия конструктора", actual);
-
     }
 
     @Test
@@ -89,6 +86,5 @@ public class SwitchToAndFromPersonalAccountTests extends BeforeAfter {
                 .clickLogoButton()
                 .isBunsIsDisplayed();
         assertTrue("Ошибка открытия главной страницы", actual);
-
     }
 }
