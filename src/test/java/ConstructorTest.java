@@ -14,7 +14,6 @@ public class ConstructorTest {
     @Rule
     public DriverRule driver = new DriverRule();
 
-
     @Test
     @DisplayName("Переход к разделу Булки")
     public void GoToTheBunSectionTest() {
@@ -26,7 +25,6 @@ public class ConstructorTest {
         Boolean actual = new MainPage(driver)
                 .clickBunsTab()
                 .isBunsIsDisplayed();
-
 
         assertThat("Ошибка перехода в раздел Булки", actual);
     }
@@ -53,7 +51,6 @@ public class ConstructorTest {
         Boolean actual = new MainPage(driver)
                 .clickFillingsTab()
                 .isFillingsIsDisplayed();
-
 
         assertThat("Ошибка перехода в раздел Начинки", actual);
     }

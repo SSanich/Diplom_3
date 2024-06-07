@@ -44,9 +44,7 @@ public class RegistrationTests extends BeforeAfter {
                 .clickPersonalAccountButton()
                 .clickRegistrationButton()
                 .registerUser(user.getName(), user.getEmail(), user.getPassword().substring(0, 4));
-
         String actual = new RegistrationPage(driver).getErrorMessage();
         MatcherAssert.assertThat("Неверный текст  сообщения об ошибке", actual,equalTo("Некорректный пароль"));
     }
-
 }

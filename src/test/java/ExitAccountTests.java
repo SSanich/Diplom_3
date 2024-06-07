@@ -14,7 +14,6 @@ public class ExitAccountTests extends BeforeAfter {
     @Rule
     public DriverRule driver = new DriverRule();
 
-
     @Test
     @DisplayName("Выход из акаунта по кнопке «Выйти» в личном кабинете")
     public void exitAccountWithButtonExit() {
@@ -28,12 +27,8 @@ public class ExitAccountTests extends BeforeAfter {
 
        new ProfilePage(driver)
                 .clickExitButton();
-
         Boolean actual = new LoginPage(driver)
                 .isSignInButtonDisplayed();
-
         assertTrue("Ошибка выхода из аккаунта", actual);
-
     }
-
 }

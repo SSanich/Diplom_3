@@ -49,7 +49,6 @@ public class EnterByButtonsTests  extends BeforeAfter {
         assertThat("Ожидается текст «Оформить заказ» ", actual, equalTo("Оформить заказ"));
     }
 
-
     @Test
     @DisplayName("Войти в профиль по «Войти» в форме регистрации")
     public void singInWithButtonOnRegistrationPageTest() {
@@ -66,7 +65,6 @@ public class EnterByButtonsTests  extends BeforeAfter {
         String actual = new MainPage(driver).getBasketButtonText();
         assertThat("Ожидается текст «Оформить заказ» ", actual, equalTo("Оформить заказ"));
     }
-
 
     @Test
     @DisplayName("Войти в профиль по «Войти» в форме восстановления пароль")
@@ -85,6 +83,5 @@ public class EnterByButtonsTests  extends BeforeAfter {
         String actual = new MainPage(driver).getBasketButtonText();
         assertThat("Ожидается текст «Оформить заказ»", actual, equalTo("Оформить заказ"));
     }
-
 }
 
