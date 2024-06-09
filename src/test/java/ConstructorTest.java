@@ -1,4 +1,3 @@
-import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Rule;
 import org.junit.Test;
@@ -16,7 +15,7 @@ public class ConstructorTest {
 
     @Test
     @DisplayName("Переход к разделу Булки")
-    public void GoToTheBunSectionTest() {
+    public void goToTheBunSectionTest() {
         WebDriver driver = driverRule.getDriver();
         driver.get(BASE_URI);
 

@@ -26,8 +26,7 @@ public class RegistrationTests extends BeforeAfter {
 
         String actual = new MainPage(driver)
                 .clickPersonalAccountButton()
-                .clickRegistrationButton()
-                .registerUser(user.getName(), user.getEmail(), user.getPassword())
+                .clickSignInButton()
                 .signInUser(user.getEmail(), user.getPassword())
                 .getBasketButtonText();
         assertThat("Ожидается текст «Оформить заказ» ", actual, equalTo("Оформить заказ"));
