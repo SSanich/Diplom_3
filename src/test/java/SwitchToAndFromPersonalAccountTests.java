@@ -22,7 +22,7 @@ public class SwitchToAndFromPersonalAccountTests extends BeforeAfter {
 
     @Test
     @DisplayName("Переход в личный кабинет авторизованного пользователяпо клику на «Личный кабинет»")
-    public void SwitchToPersonalAccountAuthUserTests() {
+    public void switchToPersonalAccountAuthUserTests() {
         WebDriver driver = driverRule.getDriver();
         driver.get(BASE_URI);
 
@@ -41,7 +41,7 @@ public class SwitchToAndFromPersonalAccountTests extends BeforeAfter {
     @Test
     @DisplayName("Переход в личный кабинет неавторизованного пользователя по клику на «Личный кабинет»")
     @Description("Switch to personal account unauth user")
-    public void SwitchToPersonalAccountUnAuthUserTests() {
+    public void switchToPersonalAccountUnAuthUserTests() {
         WebDriver driver = driverRule.getDriver();
         driver.get(BASE_URI);
 
@@ -54,7 +54,7 @@ public class SwitchToAndFromPersonalAccountTests extends BeforeAfter {
 
     @Test
     @DisplayName("Переход из личного кабинета в конструктор по клику на «Конструктор»")
-    public void SwitchFromPersonalAccountToConstructorTests() {
+    public void switchFromPersonalAccountToConstructorTests() {
         WebDriver driver = driverRule.getDriver();
         driver.get(BASE_URI);
 
@@ -72,7 +72,7 @@ public class SwitchToAndFromPersonalAccountTests extends BeforeAfter {
 
     @Test
     @DisplayName("Переход из личного кабинета в конструктор по клику на логотип Stellar Burgers")
-    public void SwitchFromPersonalAccountToConstructorToLogoTests() {
+    public void switchFromPersonalAccountToConstructorToLogoTests() {
         WebDriver driver = driverRule.getDriver();
         driver.get(BASE_URI);
 

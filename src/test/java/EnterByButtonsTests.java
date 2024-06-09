@@ -20,7 +20,7 @@ public class EnterByButtonsTests  extends BeforeAfter {
 
     @Test
     @DisplayName("Войти профиль по кнопке «Войти в аккаунт» на главной странице")
-    public void LogInUsingLogInAccountButtonOnTheMainPageTest() {
+    public void logInUsingLogInAccountButtonOnTheMainPageTest() {
         WebDriver driver = driverRule.getDriver();
         driver.get(BASE_URI);
 

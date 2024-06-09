@@ -30,7 +30,7 @@ public class ConstructorTest {
 
     @Test
     @DisplayName("Переход к разделу Соусы")
-    public void GoToTheSaucesSectionTest() {
+    public void goToTheSaucesSectionTest() {
         WebDriver driver = driverRule.getDriver();
         driver.get(BASE_URI);
 
@@ -43,7 +43,7 @@ public class ConstructorTest {
 
     @Test
     @DisplayName("Переход к разделу Начинки")
-    public void GoToTheFillingsSectionTest() {
+    public void goToTheFillingsSectionTest() {
         WebDriver driver = driverRule.getDriver();
         driver.get(BASE_URI);
 
