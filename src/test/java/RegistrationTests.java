@@ -17,7 +17,7 @@ public class RegistrationTests extends BeforeAfter {
 
     @Rule
     public DriverRule driver = new DriverRule();
-    
+
 
     @Test
     @DisplayName("Ошибка при пароле менее 6 символов")

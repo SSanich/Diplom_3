@@ -34,7 +34,8 @@ public class СreateUserUITest {
                 .getBasketButtonText();
         assertThat("Ожидается текст «Оформить заказ» ", actual, equalTo("Оформить заказ"));
     }
-
+@Test
+@DisplayName("Успешная регистрация пользователя")
     public void deleteUser() {
         if (accessToken != null) {
             ValidatableResponse deleteResponse = userApi.deleteUser(accessToken);
