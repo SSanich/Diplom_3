@@ -2,14 +2,10 @@ import io.qameta.allure.junit4.DisplayName;
 import api.User;
 import api.UserApi;
 import io.restassured.response.ValidatableResponse;
-import org.hamcrest.MatcherAssert;
-
 import org.junit.Rule;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import pageobject.MainPage;
-import pageobject.RegistrationPage;
-
 import static api.Constants.BASE_URI;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
