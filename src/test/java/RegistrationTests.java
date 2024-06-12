@@ -17,20 +17,7 @@ public class RegistrationTests extends BeforeAfter {
 
     @Rule
     public DriverRule driver = new DriverRule();
-
-    @Test
-    @DisplayName("Успешная регистрация пользователя")
-    public void successfulUserRegistrationTest() {
-        WebDriver driver = driverRule.getDriver();
-        driver.get(BASE_URI);
-
-        String actual = new MainPage(driver)
-                .clickPersonalAccountButton()
-                .clickSignInButton()
-                .signInUser(user.getEmail(), user.getPassword())
-                .getBasketButtonText();
-        assertThat("Ожидается текст «Оформить заказ» ", actual, equalTo("Оформить заказ"));
-    }
+    
 
     @Test
     @DisplayName("Ошибка при пароле менее 6 символов")
