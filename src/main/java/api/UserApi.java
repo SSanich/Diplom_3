@@ -49,4 +49,12 @@ public class UserApi {
                 .body("success", CoreMatchers.equalTo(true), "message", CoreMatchers.equalTo("User successfully removed"));
     }
 
+    @Step("Login user")
+    public ValidatableResponse loginUser(UserCredentials creds) {
+        return spec()
+                .body(creds)
+                .when()
+                .post(LOGIN_USER_URL)
+                .then().log().all();
+    }
 }

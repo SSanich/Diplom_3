@@ -1,8 +1,6 @@
+import api.User;
 import io.qameta.allure.junit4.DisplayName;
-
 import org.hamcrest.MatcherAssert;
-
-import org.junit.Rule;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import pageobject.MainPage;
@@ -10,27 +8,24 @@ import pageobject.RegistrationPage;
 
 import static api.Constants.BASE_URI;
 import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.MatcherAssert.assertThat;
 
-public class RegistrationTests extends BeforeAfter {
+public class RegistrationTests {
+    User user;
     private DriverRule driverRule = new DriverRule();
-
-    @Rule
-    public DriverRule driver = new DriverRule();
-
 
     @Test
     @DisplayName("Ошибка при пароле менее 6 символов")
 
     public void registrationWithInvalidPasswordTest() {
-        WebDriver driver = driverRule.getDriver();
+        driverRule.initDriver();
+        WebDriver driver = DriverRule.getDriver();
         driver.get(BASE_URI);
-
+        user = User.random();
         new MainPage(driver)
                 .clickPersonalAccountButton()
                 .clickRegistrationButton()
                 .registerUser(user.getName(), user.getEmail(), user.getPassword().substring(0, 4));
         String actual = new RegistrationPage(driver).getErrorMessage();
-        MatcherAssert.assertThat("Неверный текст  сообщения об ошибке", actual,equalTo("Некорректный пароль"));
+        MatcherAssert.assertThat("Неверный текст  сообщения об ошибке", actual, equalTo("Некорректный пароль"));
     }
 }

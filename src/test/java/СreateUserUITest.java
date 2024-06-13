@@ -1,10 +1,11 @@
 import io.qameta.allure.junit4.DisplayName;
 import api.User;
 import api.UserApi;
-import io.restassured.response.ValidatableResponse;
+import org.junit.After;
 import org.junit.Rule;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import pageobject.MainPage;
 import static api.Constants.BASE_URI;
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -12,13 +13,10 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 
 public class СreateUserUITest {
-    UserApi userApi;
+    UserApi userApi = new UserApi();
     User user;
     String accessToken;
     private DriverRule driverRule = new DriverRule();
-
-    @Rule
-    public DriverRule driver = new DriverRule();
 
     @Test
     @DisplayName("Успешная регистрация пользователя")
@@ -32,15 +30,18 @@ public class СreateUserUITest {
                 .registerUser(user.getName(), user.getEmail(), user.getPassword())
                 .signInUser(user.getEmail(), user.getPassword())
                 .getBasketButtonText();
-        assertThat("Ожидается текст «Оформить заказ» ", actual, equalTo("Оформить заказ"));
-    }
-@Test
-@DisplayName("Успешная регистрация пользователя")
-    public void deleteUser() {
-        if (accessToken != null) {
-            ValidatableResponse deleteResponse = userApi.deleteUser(accessToken);
-            userApi.checkDeleteSuccessfully(deleteResponse);
-        }
+        assertThat("Ожидается текст «Оформить заказ» ", actual, equalTo("Оформить зака"));
+
     }
 
+    @After
+    @DisplayName("Успешное удаление пользователя")
+    public void deleteUser() {
+        accessToken = userApi.loginUser(user.toUserCredential())
+                .extract()
+                .path("accessToken");
+        if (accessToken != null) {
+            userApi.deleteUser(accessToken);
+        }
+    }
 }
