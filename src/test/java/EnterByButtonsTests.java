@@ -4,7 +4,6 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import pageobject.LoginPage;
 import pageobject.MainPage;
-
 import static api.Constants.BASE_URI;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;

@@ -2,10 +2,8 @@ import io.qameta.allure.junit4.DisplayName;
 import api.User;
 import api.UserApi;
 import org.junit.After;
-import org.junit.Rule;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import pageobject.MainPage;
 import static api.Constants.BASE_URI;
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -30,7 +28,7 @@ public class СreateUserUITest {
                 .registerUser(user.getName(), user.getEmail(), user.getPassword())
                 .signInUser(user.getEmail(), user.getPassword())
                 .getBasketButtonText();
-        assertThat("Ожидается текст «Оформить заказ» ", actual, equalTo("Оформить зака"));
+        assertThat("Ожидается текст «Оформить заказ» ", actual, equalTo("Оформить заказ"));
 
     }
 

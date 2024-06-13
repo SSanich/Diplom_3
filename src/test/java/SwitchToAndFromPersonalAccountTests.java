@@ -1,16 +1,13 @@
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
-
 import org.junit.Rule;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import pageobject.LoginPage;
 import pageobject.MainPage;
 import pageobject.ProfilePage;
-
 import static api.Constants.BASE_URI;
 import static org.hamcrest.CoreMatchers.containsString;
-
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertTrue;
 

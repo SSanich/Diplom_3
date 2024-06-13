@@ -3,7 +3,6 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import pageobject.MainPage;
-
 import static api.Constants.BASE_URI;
 import static org.hamcrest.MatcherAssert.assertThat;
 
